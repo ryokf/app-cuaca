@@ -6,37 +6,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="dist/output.css">
 </head>
 
-<body>
+<body class="font-inter">
 
-    <div class="coba"></div>
+    <div class="container h-screen bg-cover" style="background-image: url('dist/img/bg.jpg');">
 
-    <h1 class="text-4xl"></h1>
+        <nav class="bg-slate-30">
+            <div class="container">
+                <div class="w-full flex justify-center px-4 py-2">
+                    <input id="cari-lokasi" type="text" class="p-1 rounded-md focus:outline-none">
+                </div>
+            </div>
+        </nav>
 
+        <section>
+            <div class="container my-4">
+                <div class="w-10/12 mx-auto rounded-lg text-center bg-white/30 backdrop-blur-sm">
+                    <h1 id="nama-kota" class="p-8 font-bold text-4xl text-slate-800"></h1>
+                    <p id="tanggal" class="text-center text-slate-800"></p>
+                    <h1 id="suhu"></h1>
+                </div>
+            </div>
+        </section>
+
+    </div>
     <script src="https://code.jquery.com/jquery-3.6.1.js"
         integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-    <script>
-        $.ajax({
-            type: "GET",
-            url: "http://api.openweathermap.org/data/2.5/weather",
-            data: {
-                'q': 'semarang',
-                // 'lat' : '44.34',
-                // 'lon' : '10.99',
-                'APPID': '8dd8a74df072f100f5a98c071d528825',
-                // 'lang' : 'id',
-                'units': 'metric',
-            },
-            dataType: "json",
-            success: function (response) {
-                if (response) { }
-                console.log(response);
-                $('h1').append(response.weather[0].description);
-            }
-        });
-    </script>
+    <script src="dist/js/script.js"></script>
+
 </body>
 
 </html>
