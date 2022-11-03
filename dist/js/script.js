@@ -1,3 +1,7 @@
+function convert_suhu(suhu){
+    return (9/5 * suhu) + 32;
+}
+
 function cuaca(cuaca){
     if(cuaca === 'awan pecah' || cuaca === 'awan tersebar' || cuaca === 'langit cerah'){
         return 'cerah';
@@ -44,10 +48,12 @@ $('#tombol-cari').on('click', function(){
             $('#nama-kota').append(response.name);
             $('#tanggal').append(today(response.dt * 1000));
             $('#suhu-celcius').append(Math.round(response.main.temp) + '<span><sup>o</sup>C</span>/');
-            $('#suhu-fahrenheit').append(Math.round(response.main.temp) + '<span><sup>o</sup>F</span>');
+            $('#suhu-fahrenheit').append(Math.round(convert_suhu(response.main.temp)) + '<span><sup>o</sup>F</span>');
             $('#cuaca').append(cuaca(response.weather[0].description));
             $('img').attr('src', `dist/img/${cuaca(response.weather[0].description)}.png`);
-            // $('#cuaca').append(response.weather[0].description);
+            $('#kelembapan').append(response.main.humidity + '%');
+            $('#tekanan').append(response.main.pressure + 'pHa');
+            $('#angin').append(response.wind.speed + 'm/s');
 
             $('#input-cari').val('');
         },
