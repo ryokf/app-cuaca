@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily : {
-        'inter' : ['Inter', 'sans-serif'],
+        'inter' : ['Lexend Deca', 'sans-serif'],
       },
     },
   },
