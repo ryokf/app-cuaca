@@ -621,6 +621,11 @@ video {
   margin-bottom: 1.25rem;
 }
 
+.mx-6 {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
 .mt-6 {
   margin-top: 1.5rem;
 }
@@ -631,6 +636,10 @@ video {
 
 .grid {
   display: grid;
+}
+
+.hidden {
+  display: none;
 }
 
 .aspect-square {
@@ -665,12 +674,20 @@ video {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.flex-col {
+  flex-direction: column;
+}
+
 .flex-wrap {
   flex-wrap: wrap;
 }
 
 .items-center {
   align-items: center;
+}
+
+.justify-end {
+  justify-content: flex-end;
 }
 
 .justify-center {
@@ -706,38 +723,17 @@ video {
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
-.bg-slate-50 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(248 250 252 / var(--tw-bg-opacity));
-}
-
-.bg-slate-800 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(30 41 59 / var(--tw-bg-opacity));
-}
-
-.bg-slate-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(100 116 139 / var(--tw-bg-opacity));
-}
-
 .bg-slate-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(241 245 249 / var(--tw-bg-opacity));
 }
 
-.bg-slate-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(203 213 225 / var(--tw-bg-opacity));
-}
-
-.bg-slate-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(226 232 240 / var(--tw-bg-opacity));
-}
-
 .bg-cover {
   background-size: cover;
+}
+
+.fill-current {
+  fill: currentColor;
 }
 
 .p-4 {
@@ -785,13 +781,48 @@ video {
   line-height: 1.75rem;
 }
 
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
 .font-bold {
   font-weight: 700;
+}
+
+.font-semibold {
+  font-weight: 600;
 }
 
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.transition {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.duration-500 {
+  transition-duration: 500ms;
+}
+
+.duration-300 {
+  transition-duration: 300ms;
 }
 
 .text-dark {
@@ -806,33 +837,50 @@ video {
 } */
 
 .neumorphism-shadow{
-  box-shadow: -1px -1px 10px -10px white,
-    10px 10px 10px 0 rgba(10,10,10,0.1),
-    -5px -5px 10px 0 rgba(10,10,10,0.1) inset,
-    4px 4px 10px 0 white inset;
+  box-shadow: 
+    2px 2px 10px -7px rgba(0,0,0,1),
+    -1px -1px 10px -10px white,
+    7px 7px 20px -10px rgba(255,255,255,0.5) inset,
+    -2px -2px 10px -7px rgba(0,0,0,1) inset
+    ;
 }
 
 .neumorphism-shadow-sm{
-  box-shadow: -1px -1px 10px -10px white,
-    5px 5px 10px 0 rgba(10,10,10,0.2),
-    -3px -3px 10px 0 rgba(10,10,10,0.2) inset,
-    3px 3px 10px 0 white inset;
+  box-shadow: 
+    2px 2px 10px -7px rgba(0,0,0,1),
+    -1px -1px 10px -10px white,
+    7px 7px 20px -10px rgba(255,255,255,0.5) inset,
+    -2px -2px 10px -7px rgba(0,0,0,1) inset
+    ;
+}
+
+.neumorphism-shadow-sm:hover{
+  box-shadow:none;
+}
+
+.neumorphism-shadow-sm:active{
+  box-shadow: 
+    -3px -3px 10px -5px rgba(255,255,255,0.5) inset,
+    3px 3px 10px -5px rgba(10,10,10,0.6) inset;
 }
 
 .neumorphism-shadow-input-search{
   box-shadow: 
-    -3px -3px 10px 0 rgba(255,255,255,0.7) inset,
-    3px 3px 10px 0 rgba(10,10,10,0.2) inset;
-}
-
-.neumorphism-shadow-search{
-  box-shadow: -5px -5px 10px -10px white,
-    5px 5px 30px 0 rgba(10,10,10,0.2),
-    -3px -3px 10px 0 rgba(10,10,10,0.2) inset,
-    3px 3px 10px 0 white inset;
+    -3px -3px 10px -5px rgba(255,255,255,0.5) inset,
+    3px 3px 10px -5px rgba(10,10,10,0.6) inset;
 }
 
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
+}
+
+.dark .dark\:bg-neutral-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(64 64 64 / var(--tw-bg-opacity));
+}
+
+.dark .dark\:text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }

@@ -11,7 +11,7 @@ function cuaca(cuaca){
         return 'berawan';
     } else if(cuaca === 'hujan sedang' || cuaca === 'hujan ringan' || cuaca === 'hujan rintik-rintik'){
         return 'hujan ringan';
-    }else if(cuaca === 'salju ringan'){
+    }else if(cuaca === 'salju ringan' || cuaca === 'kabut asap'){
         return cuaca;
     }
 }
@@ -24,6 +24,17 @@ function today(date){
     let today = new Date(date);
     return `${days[today.getDay()]}, ${today.getDate()} ${months[today.getMonth()]} ${today.getFullYear()}`
 }
+
+const tombol_mode = document.querySelector('#mode');
+const icon_mode = document.querySelectorAll('#mode svg');
+const class_html = document.querySelector('html');
+
+tombol_mode.addEventListener('click', function(){
+    class_html.classList.toggle('dark');
+    for(let i = 0; i <= icon_mode.length; i++ ){
+        icon_mode[i].classList.toggle('hidden');
+    }
+})
 
 $('#tombol-cari').on('click', function(){
     $('#nama-kota').html('');
